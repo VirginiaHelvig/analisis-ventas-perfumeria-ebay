@@ -1,4 +1,4 @@
-# 🧴 Análisis de Ventas de Perfumes en eBay
+# Análisis de Ventas de Perfumes en eBay
 
 Dashboard interactivo en Tableau que analiza las ventas globales de perfumería en eBay durante 2022-2023, orientado a un equipo de analistas del sector financiero que necesita tomar decisiones estratégicas sobre mercados, categorías y marcas.
 
@@ -6,7 +6,7 @@ Dashboard interactivo en Tableau que analiza las ventas globales de perfumería 
 
 ---
 
-## 🎯 Objetivo del análisis
+## Objetivo del análisis
 
 Evaluar el desempeño de ventas a nivel mundial del sector Perfumería de eBay para responder:
 
@@ -16,21 +16,21 @@ Evaluar el desempeño de ventas a nivel mundial del sector Perfumería de eBay p
 - ¿Qué productos son populares y cuáles se están volviendo obsoletos?
 - ¿Estamos cumpliendo el objetivo de ventas definido?
 
-## 📊 Los datos
+## Los datos
 
 - **Fuente**: [Kaggle](https://www.kaggle.com)
 - **Período**: 2022-2023
 - **Volumen**: 1.985 registros de venta, 13 columnas (marca, producto, categoría, género, precio unitario, unidades disponibles/vendidas, ventas, fecha, ciudad, país)
 - **Calidad**: sin valores nulos ni filas duplicadas
 
-## 🛠️ Herramientas
+## Herramientas
 
 Tableau Desktop / Tableau Public · Excel (fuente de datos)
 
-## 🔍 Proceso
+## Proceso
 
 1. **Definición del objetivo de negocio** antes de tocar los datos: quién es el usuario del dashboard (analistas financieros) y qué decisiones necesita tomar.
-2. **Preparación y limpieza de datos** en Excel antes de conectar la fuente a Tableau: verificación de tipos de dato y consistencia de campos.
+2. **Preparación y limpieza de datos** en Excel antes de conectar la fuente a Tableau: verificación de tipos de dato, corrección de formatos inconsistentes y validación de que no hubiera valores nulos ni filas duplicadas.
 3. **Campos calculados propios**, pensados para agregar valor analítico más allá de agregaciones simples:
    - `Tipos de vendedores`: clasifica países en *primarios / secundarios / terciarios* combinando volumen de unidades vendidas y facturación (lógica tipo ABC), en vez de rankear por un solo criterio.
    - `Ventas Faltantes`: mide la brecha entre las ventas acumuladas y un objetivo de ventas de USD 50.000.000, alimentando un gauge de cumplimiento de meta.
@@ -40,7 +40,7 @@ Tableau Desktop / Tableau Public · Excel (fuente de datos)
 4. **Diseño de 4 dashboards** con propósitos distintos (ver abajo), incluyendo interactividad entre ellos (el mapa filtra el resto de las vistas del Dashboard 1).
 5. **Documentación embebida**: el propio archivo de Tableau incluye una hoja de "Documentación" con el objetivo, la fuente y la lógica de cada campo calculado.
 
-## 🖥️ Estructura del dashboard
+## Estructura del dashboard
 
 | Dashboard | Enfoque | Contenido |
 |---|---|---|
@@ -76,9 +76,6 @@ Tableau Desktop / Tableau Public · Excel (fuente de datos)
 - **Categorías**: Eau de Toilette (74,53%) y Eau de Parfum (16,33%) son las categorías con mayor participación de mercado
 - **Marcas**: Versace y Calvin Klein encabezan el ranking, seguidas por Dolce & Gabbana
 
-## ⚠️ Observaciones sobre calidad de datos
-
-Se hizo un trabajo importante de limpieza de datos en Excel antes de pasar la fuente a Tableau. Aun así, quedó una inconsistencia menor sin resolver: el campo `Categoría` tiene algunas variantes de formato (ej. "Eau de Parfum" / "Eau De Parfum" / "Eau de parfum" registradas como valores distintos por diferencias de mayúsculas). No afecta a las vistas publicadas porque los gráficos de categoría usan campos agrupados/filtrados, pero queda identificado como mejora para una próxima iteración (estandarizar texto en el ETL antes de cargar a Tableau).
 
 ## 📁 Contenido de este repositorio
 
